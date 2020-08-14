@@ -2,4 +2,4 @@
 
 Linguagem de Servidor.
 
-Repositório para aulas de PHP.
+Repositório para aulas de PHP e linguagens de servidor.
