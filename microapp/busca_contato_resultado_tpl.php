@@ -32,7 +32,7 @@
         }
       } else { // Se não tiver dado na tabela
         echo "	<tr>
-									colspan='4'>Não há dados
+									<td colspan='4'> Não encontrei nada com {$_POST['buscar']} </td>
 								</tr>";
       }
       ?>
