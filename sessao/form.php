@@ -3,10 +3,12 @@
 //controle de cookie
 session_start();
 
-echo 'Seu ID de sessão é: ' . session_id();
-echo '<br><br>';
+require 'sessao.php';
 
-$_SESSION['user'] = 'Gustavo';
+include 'header_tpl.php';
+include 'index_menu_tpl.php';
+include 'footer_tpl.php';
+include 'conteudo_tpl.php';
 
 ?>
 

@@ -3,6 +3,9 @@
 //controle de cookie
 session_start();
 
+require 'sessao.php';
+
+
 require_once 'db.php';
 
 // $nota = $_REQUEST['nota']; PEGA GET E POST
@@ -16,5 +19,3 @@ if ($nota == '9-10') {
 } else {
   echo '<br><br>O que poderiamos fazer para você nos dar uma nota melhor?';
 }
-
-echo "<br><br>Usuário: " . $_SESSION['user'];
