@@ -1,17 +1,46 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+require_once "bd.php";
 
-$dsn = 'sqlsrv:Server=localhost\\SQLEXPRESS;Database=dbmega';
-$user = 'sa';
-$password = 'Senhasqlsenac2020';
-
-$db = new PDO($dsn, $user, $password);
-
+// SELECT
 $sql = 'SELECT nome, telefone FROM cliente';
 
-foreach ($db->query($sql) as $registro) {
-  echo "Nome: {$registro['nome']}||Telefone: {$registro['telefone']} <br> ";
+$consultaBanco = $db->query($sql);
+
+// QUERY
+foreach ($consultaBanco as $registro) {
+  echo "Nome: {$registro['nome']}|| Telefone: {$registro['telefone']}";
+  echo "<a href=''> Apagar </a> <br>";
+}
+
+/*
+while ($registro = $consultaBanco->fetch(PDO::FETCH_ASSOC)) {
+
+  echo "Sr. {$registro['nome']}, telefone {$registro['telefone']}. <br>";
+}
+*/
+
+// DELETE
+$db->query("DELETE FROM cliente WHERE id = 2");
+
+foreach ($consultaBanco as $registro) {
+  echo "Nome: {$registro['nome']}|| Telefone: {$registro['telefone']}";
+  echo "<a href=''> Apagar </a> <br>";
+}
+
+
+// UPDATE
+$db->query("UPDATE cliente SET nome = 'Gabriel' WHERE id = 1");
+
+foreach ($consultaBanco as $registro) {
+  echo "Nome: {$registro['nome']}|| Telefone: {$registro['telefone']}";
+  echo "<a href=''> Apagar </a> <br>";
+}
+
+// INSERT
+$db->query("INSERT INTO cliente (nome, telefone, id) VALUES ('ANSJNSI', '54545454', '2')");
+
+foreach ($consultaBanco as $registro) {
+  echo "Nome: {$registro['nome']}|| Telefone: {$registro['telefone']}";
+  echo "<a href=''> Apagar </a> <br>";
 }
