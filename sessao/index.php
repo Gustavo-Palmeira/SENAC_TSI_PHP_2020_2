@@ -8,10 +8,9 @@ session_start();
 
 require_once "dbsql.php";
 
-
 // EXEMPLO SENHA
-// $pass = password_hash('abc', PASSWORD_DEFAULT);
-// $db->query("INSERT INTO usuario (nome, email, senha) VALUES ('maria', 'maria@senac.br', '$pass')");
+//$pass = password_hash('admin', PASSWORD_DEFAULT);
+//$db->query("INSERT INTO userLogin (userName, userEmail, userPassword) VALUES ('Gustavo', 'gustavo@senac.com.br', '$pass')");
 
 if (isset($_SESSION['login'])) {
 
@@ -25,9 +24,9 @@ if (isset($_SESSION['login'])) {
 
   // Verificar se existe usuário
 
-  $consultaBanco = $db->query("SELECT senha FROM usuario WHERE email = '$login' ");
+  $consultaBanco = $db->query("SELECT userPassword FROM userLogin WHERE userEmail = '$login' ");
   $registro = $consultaBanco->fetch(PDO::FETCH_ASSOC);
-  $hash = $registro['senha'];
+  $hash = $registro['userPassword'];
 
   // Comparar
   if (password_verify($senha, $hash)) {

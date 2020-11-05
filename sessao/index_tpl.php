@@ -23,7 +23,7 @@
             <label for="senha">Senha</label>
             <input type="password" id="senha" name="senha">
             <br><br>
-            <input type="submit" name="entrar" value="Entrar">
+            <input type="submit" name="entrar" id="entrar" value="entrar">
           </form>
         </td>
       </tr>

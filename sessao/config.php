@@ -2,7 +2,7 @@
 <?php
 
 // Definindo as constantes para o acesso ao banco
-$dsn = 'sqlsrv:Server=localhost\\SQLEXPRESS;database=Login';
+$dsn = 'sqlsrv:Server=localhost\\SQLEXPRESS;database=login_php';
 // Usuário que acessa o banco
 $user = 'sa';
 // Senha
