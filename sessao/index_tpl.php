@@ -23,6 +23,8 @@
             <label for="senha">Senha</label>
             <input type="password" id="senha" name="senha">
             <br><br>
+              <a href="usuario/cadastro.php"> Cadastre-se </a>
+            <br><br>
             <input type="submit" name="entrar" id="entrar" value="entrar">
           </form>
         </td>
