@@ -19,11 +19,10 @@ if (strlen($nome) < 2) {
 }
 
 // Verifica se o e-mail é válido
-if ( !filter_var( $email, FILTER_VALIDATE_EMAIL) ) {
-	$erros[] = 'E-mail inválido';
-
-} elseif ( ja_existe_email($email) ) {
-	$erros[] = 'E-mail já cadastrado';
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  $erros[] = 'E-mail inválido';
+} elseif (ja_existe_email($email) && !isset($_POST['gravar'])) {
+  $erros[] = 'E-mail já cadastrado';
 }
 
 // Verifica se o nome tem mais que dois ou caracteres

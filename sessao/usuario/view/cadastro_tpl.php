@@ -13,15 +13,15 @@
     <table border="1">
       <tr>
         <td>
-          <form method="post">
+          <form method="post" action="cadastro.php">
             <br>
             <?php
-              if (count($erros) > 0) {
+            if (count($erros) > 0) {
 
-                foreach ($erros as $erro) {
-                  echo $erro . '<br>';
-                }
+              foreach ($erros as $erro) {
+                echo $erro . '<br>';
               }
+            }
             ?>
             <br><br>
             <label for="nome">Nome</label>

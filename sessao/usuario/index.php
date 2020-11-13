@@ -8,7 +8,53 @@ require '../sessao.php';
 
 require 'model/dados.php';
 
-chdir(__DIR__);
+chdir( __DIR__ );
+
+//Apagar
+if ( isset($_GET['apagar']) ) {
+
+	if ( !apagar_usuario( $_GET['apagar'] ) ) {
+
+		$erro = 'Erro ao tentar apagar o usuário!';
+	}
+}
+
+if ( isset($_POST['gravar']) ) {
+  require 'controller/consist_cadastro.php';
+  
+  if ( count($erros) == 0) {
+    if ( !editar_usuario($_POST['id'], $_POST['nome'], $_POST['email'], $_POST['senha'] )) {
+      $erros = ['Erro ao tentar editar usuário'];
+    } else {
+      $editado_ok = true;
+    }
+  }
+  
+
+  require '../header_tpl.php';
+  require '../index_menu_tpl.php';
+  require 'view/editar.php';
+  require '../footer_tpl.php';
+
+  exit();
+}
+
+//Editar
+if ( isset($_GET['editar']) ) {
+
+  $usuario = listar($_GET['editar']);
+  $nome = $usuario[0]['userName'] ?? '';
+  $email = $usuario[0]['userEmail'] ?? '';
+
+
+  require '../header_tpl.php';
+  require '../index_menu_tpl.php';
+  require 'view/editar.php';
+  require '../footer_tpl.php';
+
+  exit();
+}
+
 
 $lista = listar();
 
