@@ -4,6 +4,7 @@ $nome = $_POST['nome'] ?? null;
 $email = $_POST['email'] ?? null;
 $senha = $_POST['senha'] ?? null;
 $conf_senha = $_POST['conf_senha'] ?? null;
+$foto = $_POST['foto'] ?? null;
 
 // Evita espaço antes ou depois da senha
 $senha = trim($senha);

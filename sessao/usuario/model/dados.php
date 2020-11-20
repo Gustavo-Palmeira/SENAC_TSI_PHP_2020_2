@@ -100,3 +100,15 @@ function editar_usuario(int $id, string $nome, string $email, string $senha): bo
 
   return $stmt->execute();
 }
+
+/*
+function vincula_imagem_ao_usuario( int $id, string $nome_imagem ): bool
+{
+global $db;
+
+$stmt = $db -> prepare("UPDATE userLogin SET foto = :foto WHERE id = :id");
+
+$stmt -> bindParam(':foto', $nome_imagem);
+$stmt -> bindParam 
+
+}
