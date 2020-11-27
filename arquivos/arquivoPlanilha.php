@@ -18,9 +18,6 @@ while ($flinha = fgets($filePlanilha)) {
     $longitude = $dados[4];
   }
 
-  // Banco e INSERT
-  global $db;
-
   $stmt = $db->prepare("INSERT INTO planilhaCidades 
                               (id_cidade, nome, nomeabrev, latitude, longitude)
                         VALUES 
